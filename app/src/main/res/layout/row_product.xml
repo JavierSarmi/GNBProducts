@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small">
+
+    <RelativeLayout
+        android:id="@+id/rlScuTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounderd_border"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTransactionSKU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/margin_mini"
+            android:padding="@dimen/margin_small"
+            android:textColor="@color/black"
+            tools:text="PO493021" />
+
+        <ImageView
+            android:id="@+id/ivOpen"
+            android:layout_width="@dimen/margin_big"
+            android:layout_height="@dimen/margin_big"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:src="@drawable/ic_open" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransactions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/rlScuTitle"
+        tools:itemCount="20"
+        tools:listitem="@layout/row_transaction" />
+
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:gravity="end"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/rvTransactions"
+        tools:text="210" />
+</androidx.constraintlayout.widget.ConstraintLayout>
